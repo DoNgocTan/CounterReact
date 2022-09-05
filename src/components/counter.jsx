@@ -3,8 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'jquery/dist/jquery.min.js'
 import 'bootstrap/dist/js/bootstrap.min.js'
 class Counter extends Component {
-    
+    componentDidUpdate(prevProps,prevState){
+console.log('prevProps',prevProps);
+console.log('prevState',prevState);
+    }
     render() {
+        console.log( 'Counter - Rendered');
         const {onHandleIncrement,onHandleDecrement,onDelete,counter}=this.props;
         return (<div>
            

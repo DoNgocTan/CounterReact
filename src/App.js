@@ -11,6 +11,18 @@ class App extends Component {
     {id:4,value:3}
 ]
 } 
+constructor(){
+  super();
+  console.log('App - Constructor');
+  
+}
+componentDidMount(){
+  console.log('App - Mounted');
+}
+componentWillMount(){
+  console.log('App - Will Mounted');
+}
+
 handleDelete=(e)=>{
   
 const counters = this.state.counters.filter(c=>c.id!==e.id);
@@ -37,6 +49,7 @@ const counters=this.state.counters.map(counter=>counter.value=0)
 this.setState(counters); //
 }
   render() { 
+    console.log('App - Rendered');
     return (<React.Fragment>
       <Navbar counters={this.state.counters}></Navbar>
       <main className='container'><Counters 
